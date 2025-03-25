@@ -1,0 +1,77 @@
+当然可以！以下是适用于直接转换为 .docx 文件的 Markdown 格式，结构清晰、排版友好，适用于课程论文撰写：
+
+## 2. Motor Type, Parameters, and Selection Basis
+
+The actuator used in this project is a **three-phase Permanent Magnet Synchronous Motor (PMSM)**. This motor operates synchronously with the stator magnetic field and includes **surface-mounted permanent magnets (SPM)** on the rotor. PMSMs are known for their high efficiency, torque density, and precise control, making them ideal for applications like electric scooters, drones, and compact motion systems.
+
+### 2.1 Motor Type and Operating Principle
+
+#### Synchronous Operation
+
+PMSMs exhibit **zero slip**, meaning the rotor speed exactly matches the speed of the stator magnetic field. The synchronous speed is given by:
+
+nₛ = (60 × f) / p
+
+Where:
+
+- *nₛ*: synchronous speed (RPM)  
+- *f*: supply frequency (Hz)  
+- *p*: number of pole pairs
+
+This property enables precise speed control using variable-frequency inverters.
+
+#### Construction Details
+
+- **Stator**: Laminated silicon steel core with three-phase distributed windings (typically Y-connected) to reduce eddy current losses and ensure better magnetic performance.
+
+- **Rotor**: Contains **surface-mounted permanent magnets (SPM)**, usually made from high-performance NdFeB (Neodymium-Iron-Boron). This design simplifies manufacturing and is suitable for small to medium power applications.
+
+#### Comparison of Magnet Materials
+
+| Material        | Advantages                                              | Disadvantages                                      |
+|-----------------|----------------------------------------------------------|----------------------------------------------------|
+| NdFeB (Neodymium) | High magnetic energy, compact size, high torque density | High cost, heat-sensitive, requires coating        |
+| Ferrite         | Low cost, heat and corrosion resistant                   | Lower magnetic strength, bulkier volume            |
+
+This project uses NdFeB magnets for their high flux density and compactness.
+
+---
+
+### 2.2 Key Motor Parameters (Based on Thesis Design)
+
+| Parameter              | Value     | Unit   | Description                          |
+|------------------------|-----------|--------|--------------------------------------|
+| Input Voltage Range    | 12 – 50   | V DC   | Compatible with DC sources or batteries |
+| Max Continuous Current | 15        | A      | Designed for 500 W class drives      |
+| Pole Pairs             | 10        | -      | Ensures low speed with high torque   |
+| Output Power           | ≤500      | W      | Suitable for light-duty applications |
+| Rotor Type             | SPM       | -      | Surface-mounted magnet rotor         |
+| Back-EMF Shape         | Trapezoidal | -    | Matches six-step commutation method  |
+
+---
+
+### 2.3 Selection Justification
+
+#### Control Compatibility and Simplicity
+
+The SPM structure is well-suited for **six-step commutation** and **sensorless control using back-EMF zero-crossing**, which eliminates the need for expensive position sensors. This results in a low-cost, reliable, and easily implemented control system.
+
+#### Performance Benefits
+
+- **High torque density**: NdFeB magnets provide a strong magnetic field in compact dimensions.
+- **Fast dynamic response**: Rotor synchronizes immediately with stator field due to lack of rotor current delay.
+- **Full torque at low speed**: Enables stable operation even from standstill when paired with advanced control strategies.
+
+#### Thermal and Electrical Reliability
+
+The drive system uses IRF1407 MOSFETs with low Rds(on) and high current handling capacity, along with heatsinks and PWM-based modulation for thermal protection and smooth operation under high load.
+
+#### Cost-Effectiveness and Integration
+
+Compared to IPM motors, SPM motors offer easier integration, reduced cost, and better adaptability in educational or prototype systems. The combination of simplicity and control versatility makes this motor ideal for the project's scope.
+
+---
+
+你可以将此 .md 文件通过 Typora、MarkText、Obsidian 或 Pandoc 转换为 .docx 格式，保留所有格式、表格和结构。
+
+是否需要我直接帮你生成 .docx 文件？我可以为你导出并提供下载链接。
